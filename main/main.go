@@ -6,6 +6,7 @@ import (
 	"factory"
 	"factoryAbstract"
 	"prototype"
+	"builder"
 )
 
 func main() {
@@ -33,4 +34,7 @@ func main() {
 	pb.SetLanguage("c#")
 	pa.Show()
 	pb.Show()
+	//builder
+	ba := builder.NewPhone("yummy","i7","16g","256g","1200w","6")
+	ba.Display()
 }
