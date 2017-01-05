@@ -7,6 +7,7 @@ import (
 	"factoryAbstract"
 	"prototype"
 	"builder"
+	"bridge"
 )
 
 func main() {
@@ -37,4 +38,11 @@ func main() {
 	//builder
 	ba := builder.NewPhone("yummy","i7","16g","256g","1200w","6")
 	ba.Display()
+	//bridge
+	bba := new(bridge.ToolByFork)
+	bba.Use("fork")
+	fmt.Println(bba)
+	//bba.Show()
+	//bbb := bridge.NewPerson("viile",bba)
+	//bbb.Eat("apple")
 }
