@@ -8,6 +8,7 @@ import (
 	"prototype"
 	"builder"
 	"bridge"
+	"flyweight"
 )
 
 func main() {
@@ -45,4 +46,14 @@ func main() {
 	bba.Show()
 	bbb := bridge.NewPerson("viile",bba)
 	bbb.Eat("apple")
+	//flyweight
+	var flyc flyweight.CarFactory
+	flyc.Cars = make(map[string]flyweight.Car)
+	fcar1 := flyc.CreateCar("benz")
+	fcar2 := flyc.CreateCar("benz")
+	fcar3 := flyc.CreateCar("audi")
+	fcar1.Create("benz 3")
+	fcar1.Drive()
+	fmt.Println(fcar2,fcar3)
+
 }
