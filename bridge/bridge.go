@@ -8,17 +8,17 @@ type PersonInterface interface {
 
 type Person struct {
 	name string
-	tool ToolInterface
+	tool Tool
 }
 
-func NewPerson(name string,tool ToolInterface) *Person{
+func NewPerson(name string,tool Tool) *Person{
 	var _person = new(Person)
 	_person.name = name
 	_person.tool = tool
 	return _person
 }
 func (this *Person) Eat(food string) {
-	fmt.Println(this.name," use ",this.tool," eat ",food)
+	fmt.Println(this.name," use ",this.tool.Show()," eat ",food)
 }
 
 type ToolInterface interface {
@@ -35,8 +35,4 @@ func (this *Tool ) Use(name string){
 func (this *Tool) Show() string {
 	fmt.Println(this.name)
 	return this.name
-}
-
-type ToolByFork struct {
-	Tool
 }

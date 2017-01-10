@@ -39,10 +39,10 @@ func main() {
 	ba := builder.NewPhone("yummy","i7","16g","256g","1200w","6")
 	ba.Display()
 	//bridge
-	bba := new(bridge.ToolByFork)
+	var bba bridge.Tool
 	bba.Use("fork")
 	fmt.Println(bba)
-	//bba.Show()
-	//bbb := bridge.NewPerson("viile",bba)
-	//bbb.Eat("apple")
+	bba.Show()
+	bbb := bridge.NewPerson("viile",bba)
+	bbb.Eat("apple")
 }
