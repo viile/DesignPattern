@@ -11,6 +11,7 @@ import (
 	"flyweight"
 	"facade"
 	"adapter"
+	"decorator"
 )
 
 func main() {
@@ -65,4 +66,8 @@ func main() {
 	adapl := new(adapter.AudioPlayer)
 	adapl.Play("mp3","one")
 	adapl.Play("wma","two")
+	//decorator
+	deapl := decorator.NewAnimal("frog")
+	deaa := decorator.NewAnimalWhoop(deapl)
+	deaa.Whoop()
 }
