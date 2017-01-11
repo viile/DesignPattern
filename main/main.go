@@ -10,6 +10,7 @@ import (
 	"bridge"
 	"flyweight"
 	"facade"
+	"adapter"
 )
 
 func main() {
@@ -60,4 +61,8 @@ func main() {
 	fabbb := facade.NewAnimalWhoop()
 	fabbb.WhoopDog()
 	fabbb.WhoopFrog()
+	//adapter
+	adapl := new(adapter.AudioPlayer)
+	adapl.Play("mp3","one")
+	adapl.Play("wma","two")
 }
