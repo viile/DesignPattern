@@ -12,6 +12,7 @@ import (
 	"facade"
 	"adapter"
 	"decorator"
+	"composite"
 )
 
 func main() {
@@ -70,4 +71,13 @@ func main() {
 	deapl := decorator.NewAnimal("frog")
 	deaa := decorator.NewAnimalWhoop(deapl)
 	deaa.Whoop()
+	//composite
+	comroot := composite.NewFolder("root")
+	comdata := composite.NewFolder("data")
+	comtmp := composite.NewFolder("tmp")
+	comf1 := composite.NewFile("f1.go")
+	comroot.Add(comdata)
+	comdata.Add(comtmp)
+	comtmp.Add(comf1)
+	comroot.Show()
 }
