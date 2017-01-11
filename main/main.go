@@ -9,6 +9,7 @@ import (
 	"builder"
 	"bridge"
 	"flyweight"
+	"facade"
 )
 
 func main() {
@@ -55,5 +56,8 @@ func main() {
 	fcar1.Create("benz 3")
 	fcar1.Drive()
 	fmt.Println(fcar2,fcar3)
-
+	//facade
+	fabbb := facade.NewAnimalWhoop()
+	fabbb.WhoopDog()
+	fabbb.WhoopFrog()
 }
