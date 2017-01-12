@@ -15,6 +15,7 @@ import (
 	"composite"
 	"proxy"
 	"filter"
+	"template"
 )
 
 func main() {
@@ -100,4 +101,13 @@ func main() {
 	persons = append(persons,filas5)
 	fildo := filter.NewFilterGender("female")
 	fmt.Println(fildo.DoFilter(persons))
+	//template
+	temone := new(template.SmsSO)
+	temone.Sms.Parent = temone
+	temone.Initialize("one")
+	temone.Send("18723123")
+	temtwo := new(template.SmsST)
+	temtwo.Sms.Parent = temtwo
+	temtwo.Initialize("two")
+	temtwo.Send("123123123")
 }

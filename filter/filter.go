@@ -40,7 +40,6 @@ func NewPerson(gender,sport string) *Person {
 	return &Person{gender:gender,sport:sport}
 }
 func (this *Person) Gender() string {
-	fmt.Println(this.gender)
 	return this.gender
 }
 func (this *Person) Sport() string {
