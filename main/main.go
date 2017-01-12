@@ -14,6 +14,7 @@ import (
 	"decorator"
 	"composite"
 	"proxy"
+	"filter"
 )
 
 func main() {
@@ -85,4 +86,18 @@ func main() {
 	prasd := proxy.NewCarFactory("benz")
 	prp := prasd.Product()
 	prp.Drive("shanghai")
+	//filter
+	filas1 := filter.NewPerson("male","basketball")
+	filas2 := filter.NewPerson("male","football")
+	filas3 := filter.NewPerson("male","swim")
+	filas4 := filter.NewPerson("female","swim")
+	filas5 := filter.NewPerson("female","football")
+	var persons []*filter.Person
+	persons = append(persons,filas1)
+	persons = append(persons,filas2)
+	persons = append(persons,filas3)
+	persons = append(persons,filas4)
+	persons = append(persons,filas5)
+	fildo := filter.NewFilterGender("female")
+	fmt.Println(fildo.DoFilter(persons))
 }
