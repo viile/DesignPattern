@@ -13,6 +13,7 @@ import (
 	"adapter"
 	"decorator"
 	"composite"
+	"proxy"
 )
 
 func main() {
@@ -80,4 +81,8 @@ func main() {
 	comdata.Add(comtmp)
 	comtmp.Add(comf1)
 	comroot.Show()
+	//proxy
+	prasd := proxy.NewCarFactory("benz")
+	prp := prasd.Product()
+	prp.Drive("shanghai")
 }
