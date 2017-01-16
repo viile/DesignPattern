@@ -17,6 +17,7 @@ import (
 	"filter"
 	"template"
 	"strategy"
+	"state"
 )
 
 func main() {
@@ -118,4 +119,13 @@ func main() {
 	strab := new(strategy.StrategyTwo)
 	strab.DoSth("two")
 	strab.SomeOp()
+	//state
+	staaa := state.NewFarmer()
+	staaa.Harvest()
+	staaa.Grow()
+	staaa.Harvest()
+	staaa.Grow()
+	staaa.Harvest()
+	staaa.Grow()
+	staaa.Harvest()
 }
