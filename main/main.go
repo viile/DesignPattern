@@ -16,6 +16,7 @@ import (
 	"proxy"
 	"filter"
 	"template"
+	"strategy"
 )
 
 func main() {
@@ -110,4 +111,11 @@ func main() {
 	temtwo.Sms.Parent = temtwo
 	temtwo.Initialize("two")
 	temtwo.Send("123123123")
+	//strategy
+	straa := new(strategy.StrategyOne)
+	straa.DoSth("one")
+	straa.SomeOp()
+	strab := new(strategy.StrategyTwo)
+	strab.DoSth("two")
+	strab.SomeOp()
 }
