@@ -31,13 +31,3 @@ func (this *Handler) Check(req *Request) {
 		this.next.Check(req)
 	}
 }
-
-type HandlerOne struct {
-	Handler
-}
-type HandlerTwo struct {
-	Handler
-}
-type HandlerThree struct {
-	Handler
-}

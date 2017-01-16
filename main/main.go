@@ -20,6 +20,7 @@ import (
 	"state"
 	"observer"
 	"chanOfResponsibility"
+	"visotor"
 )
 
 func main() {
@@ -148,4 +149,8 @@ func main() {
 	chha3 := chanOfResponsibility.NewHandler("three")
 	chha1.SetNext(chha2).SetNext(chha3)
 	chha1.Check(chr)
+	//visotor
+	vp := visotor.NewPerson("zhangsan")
+	vp.Eat(new(visotor.VisotorAmerica))
+	vp.Eat(new(visotor.VisotorAsia))
 }
