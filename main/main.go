@@ -19,6 +19,7 @@ import (
 	"strategy"
 	"state"
 	"observer"
+	"chanOfResponsibility"
 )
 
 func main() {
@@ -140,4 +141,11 @@ func main() {
 	obaaaa.Attach(obc3)
 	obaaaa.Attach(obc4)
 	obaaaa.Notify()
+	//chanOfResponsibility
+	chr := chanOfResponsibility.NewRequest("test")
+	chha1 := chanOfResponsibility.NewHandler("one")
+	chha2 := chanOfResponsibility.NewHandler("two")
+	chha3 := chanOfResponsibility.NewHandler("three")
+	chha1.SetNext(chha2).SetNext(chha3)
+	chha1.Check(chr)
 }
