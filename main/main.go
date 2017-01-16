@@ -18,6 +18,7 @@ import (
 	"template"
 	"strategy"
 	"state"
+	"observer"
 )
 
 func main() {
@@ -128,4 +129,15 @@ func main() {
 	staaa.Harvest()
 	staaa.Grow()
 	staaa.Harvest()
+	//observer
+	obaaaa := observer.NewObs()
+	obc1 := observer.NewObc("1")
+	obc2 := observer.NewObc("2")
+	obc3 := observer.NewObc("3")
+	obc4 := observer.NewObc("4")
+	obaaaa.Attach(obc1)
+	obaaaa.Attach(obc2)
+	obaaaa.Attach(obc3)
+	obaaaa.Attach(obc4)
+	obaaaa.Notify()
 }
